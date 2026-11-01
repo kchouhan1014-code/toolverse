@@ -87,9 +87,36 @@ document.querySelectorAll(".tool-link").forEach(button => {
 });
 
 // // Login button
-document.getElementById("loginBtn").addEventListener("click", () => {
-  showToast("Login system coming soon!");
+
+const loginBtn = document.getElementById("loginBtn");
+
+async function updateAuthButton() {
+    try {
+        const response = await fetch("/api/auth/me");
+        const data = await response.json();
+        loginBtn.dataset.loggedIn = data.authenticated ? "true" : "false";
+        loginBtn.textContent = data.authenticated ? "Log Out" : "Sign In";
+    } catch (error) {
+        loginBtn.textContent = "Sign In";
+    }
+}
+
+updateAuthButton();
+
+loginBtn.addEventListener("click", async () => {
+    if (loginBtn.dataset.loggedIn === "true") {
+        try {
+            const response = await fetch("/api/auth/logout", { method: "POST" });
+            if (!response.ok) throw new Error("Logout failed");
+            window.location.reload();
+        } catch (error) {
+            showToast("Could not log out. Please try again.");
+        }
+    } else {
+        window.location.href = "/login.html";
+    }
 });
+
 
 // Keyboard shortcut
 document.addEventListener("keydown", event => {
