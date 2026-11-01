@@ -76,18 +76,21 @@ function showToast(message) {
   }, 2500);
 }
 
-// Tool buttons (actual tools come next)
+// Tool buttons
 document.querySelectorAll(".tool-link").forEach(button => {
-  button.addEventListener("click", () => {
-    const tool = button.dataset.tool;
+    button.addEventListener("click", () => {
+        const tool = button.dataset.tool;
 
-    showToast(
-      "Opening " + tool.replaceAll("-", " ") + "..."
-    );
-  });
+        if (tool === "word-counter") {
+            window.location.href = "/word-counter.html";
+            return;
+        }
+
+        showToast("Opening " + tool.replaceAll("-", " ") + "...");
+    });
 });
 
-// Login button
+// // Login button
 document.getElementById("loginBtn").addEventListener("click", () => {
   showToast("Login system coming soon!");
 });

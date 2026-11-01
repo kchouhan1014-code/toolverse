@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Counter | TOOLVERSE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:25px;background:#090914;color:#f5f5ff;font-family:Arial,sans-serif}
+main{max-width:750px;margin:35px auto}
+a{color:#55e5f5;text-decoration:none}
+h1{font-size:35px;margin-top:35px}
+p{color:#aaaabd;line-height:1.6}
+.panel{background:#191927;border:1px solid #41415a;border-radius:18px;padding:22px;margin-top:25px}
+textarea{width:100%;height:220px;background:#0d0d19;color:white;border:1px solid #45455e;border-radius:12px;padding:16px;font-size:16px;resize:vertical;outline:none}
+textarea:focus{border-color:#50dff2}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.stat{background:#222238;padding:18px;border-radius:12px;text-align:center}
+.stat strong{display:block;color:#50e2f4;font-size:28px}
+.stat span{color:#aaaabd;font-size:13px}
+button{border:0;border-radius:9px;padding:13px 20px;margin:12px 8px 0 0;background:linear-gradient(100deg,#38d9ed,#a16cf5);color:#080814;font-weight:bold;font-size:15px}
+</style>
+</head>
+<body>
+<main>
+<a href="/">← Back to TOOLVERSE</a>
+<h1>📝 Word Counter</h1>
+<p>Count words, characters, sentences and paragraphs instantly as you type.</p>
+<div class="panel">
+<textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
+<div class="stats">
+<div class="stat"><strong id="words">0</strong><span>Words</span></div>
+<div class="stat"><strong id="characters">0</strong><span>Characters</span></div>
+<div class="stat"><strong id="sentences">0</strong><span>Sentences</span></div>
+<div class="stat"><strong id="paragraphs">0</strong><span>Paragraphs</span></div>
+</div>
+<button id="copyBtn">Copy Text</button>
+<button id="clearBtn">Clear Text</button>
+</div>
+</main>
+<script>
+const input=document.getElementById("textInput");
+function countText(){
+ const text=input.value;
+ const trimmed=text.trim();
+ document.getElementById("words").textContent=trimmed?trimmed.split(/\s+/).length:0;
+ document.getElementById("characters").textContent=text.length;
+ document.getElementById("sentences").textContent=(text.match(/[.!?]+/g)||[]).length;
+ document.getElementById("paragraphs").textContent=trimmed?trimmed.split(/\n\s*\n/).filter(p=>p.trim()).length:0;
+}
+input.addEventListener("input",countText);
+document.getElementById("clearBtn").addEventListener("click",()=>{input.value="";countText();});
+document.getElementById("copyBtn").addEventListener("click",async()=>{
+ if(!input.value){alert("Please enter some text first.");return;}
+ try{await navigator.clipboard.writeText(input.value);alert("Text copied!");}
+ catch(e){alert("Copy is not available in this browser.");}
+});
+</script>
+</body>
+</html>
