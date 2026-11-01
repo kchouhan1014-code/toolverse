@@ -80,13 +80,9 @@ function showToast(message) {
 document.querySelectorAll(".tool-link").forEach(button => {
     button.addEventListener("click", () => {
         const tool = button.dataset.tool;
-
-        if (tool === "word-counter") {
-            window.location.href = "/word-counter.html";
-            return;
+        if (tool) {
+            window.location.href = "/tools.html?tool=" + encodeURIComponent(tool);
         }
-
-        showToast("Opening " + tool.replaceAll("-", " ") + "...");
     });
 });
 
