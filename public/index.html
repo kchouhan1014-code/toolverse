@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090914">
+  <meta name="description" content="TOOLVERSE - Your collection of powerful free online tools.">
+  <title>TOOLVERSE - All Tools in One Place</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">✦</span> TOOL<span>VERSE</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#tools">Explore Tools</a>
+      <a href="#categories">Categories</a>
+      <button class="login-btn" id="loginBtn">Sign In</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-badge">
+        ✨ YOUR DIGITAL TOOLBOX
+      </div>
+
+      <h1>
+        Everything You Need.<br>
+        <span>One Universe.</span>
+      </h1>
+
+      <p>
+        Discover powerful, free online tools to make your
+        everyday digital work easier, faster and smarter.
+      </p>
+
+      <div class="search-box">
+        <span>⌕</span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search your favourite tools..."
+        >
+        <kbd>/</kbd>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>20+</strong><small>Useful Tools</small></div>
+        <div><strong>06</strong><small>Categories</small></div>
+        <div><strong>FREE</strong><small>To Explore</small></div>
+      </div>
+    </section>
+
+    <section class="categories section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">BROWSE BY CATEGORY</span>
+          <h2>Explore Categories</h2>
+        </div>
+      </div>
+
+      <div class="category-list">
+        <button class="category active" data-category="All">✦ All Tools</button>
+        <button class="category" data-category="Text">📝 Text</button>
+        <button class="category" data-category="Developer">💻 Developer</button>
+        <button class="category" data-category="Generators">⚡ Generators</button>
+        <button class="category" data-category="Calculators">🧮 Calculators</button>
+        <button class="category" data-category="Image">🖼️ Image</button>
+        <button class="category" data-category="Converters">🔄 Converters</button>
+      </div>
+    </section>
+
+    <section class="tools-section section" id="tools">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">HANDPICKED FOR YOU</span>
+          <h2>Discover Our Tools</h2>
+          <p>Everything you need, right at your fingertips.</p>
+        </div>
+        <span class="tool-count" id="toolCount">20 TOOLS</span>
+      </div>
+
+      <div class="tool-grid" id="toolGrid">
+
+        <article class="tool-card" data-name="Word Counter" data-category="Text">
+          <div class="tool-icon purple">📝</div>
+          <span class="tool-category">TEXT</span>
+          <h3>Word Counter</h3>
+          <p>Count words, characters and sentences instantly.</p>
+          <button class="tool-link" data-tool="word-counter">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Case Converter" data-category="Text">
+          <div class="tool-icon pink">🔠</div>
+          <span class="tool-category">TEXT</span>
+          <h3>Case Converter</h3>
+          <p>Convert text into uppercase, lowercase and more.</p>
+          <button class="tool-link" data-tool="case-converter">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Character Counter" data-category="Text">
+          <div class="tool-icon blue">🔢</div>
+          <span class="tool-category">TEXT</span>
+          <h3>Character Counter</h3>
+          <p>Count every character in your text.</p>
+          <button class="tool-link" data-tool="character-counter">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Text Reverser" data-category="Text">
+          <div class="tool-icon cyan">🔄</div>
+          <span class="tool-category">TEXT</span>
+          <h3>Text Reverser</h3>
+          <p>Reverse words and sentences instantly.</p>
+          <button class="tool-link" data-tool="text-reverser">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="JSON Formatter" data-category="Developer">
+          <div class="tool-icon blue">{"{}"}</div>
+          <span class="tool-category">DEVELOPER</span>
+          <h3>JSON Formatter</h3>
+          <p>Format and beautify JSON data.</p>
+          <button class="tool-link" data-tool="json-formatter">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Base64 Encoder" data-category="Developer">
+          <div class="tool-icon purple">🔐</div>
+          <span class="tool-category">DEVELOPER</span>
+          <h3>Base64 Encoder</h3>
+          <p>Encode and decode Base64 text.</p>
+          <button class="tool-link" data-tool="base64">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="URL Encoder" data-category="Developer">
+          <div class="tool-icon cyan">🔗</div>
+          <span class="tool-category">DEVELOPER</span>
+          <h3>URL Encoder</h3>
+          <p>Encode and decode URLs.</p>
+          <button class="tool-link" data-tool="url-encoder">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="HTML Previewer" data-category="Developer">
+          <div class="tool-icon pink">🌐</div>
+          <span class="tool-category">DEVELOPER</span>
+          <h3>HTML Previewer</h3>
+          <p>Preview your HTML code in real time.</p>
+          <button class="tool-link" data-tool="html-previewer">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="QR Code Generator" data-category="Generators">
+          <div class="tool-icon cyan">▦</div>
+          <span class="tool-category">GENERATORS</span>
+          <h3>QR Generator</h3>
+          <p>Create QR codes from text and links.</p>
+          <button class="tool-link" data-tool="qr-generator">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Password Generator" data-category="Generators">
+          <div class="tool-icon purple">🔑</div>
+          <span class="tool-category">GENERATORS</span>
+          <h3>Password Generator</h3>
+          <p>Generate strong random passwords.</p>
+          <button class="tool-link" data-tool="password-generator">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="UUID Generator" data-category="Generators">
+          <div class="tool-icon blue">🆔</div>
+          <span class="tool-category">GENERATORS</span>
+          <h3>UUID Generator</h3>
+          <p>Generate unique identifiers.</p>
+          <button class="tool-link" data-tool="uuid-generator">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Random Number" data-category="Generators">
+          <div class="tool-icon pink">🎲</div>
+          <span class="tool-category">GENERATORS</span>
+          <h3>Random Number</h3>
+          <p>Generate random numbers in any range.</p>
+          <button class="tool-link" data-tool="random-number">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Age Calculator" data-category="Calculators">
+          <div class="tool-icon purple">🎂</div>
+          <span class="tool-category">CALCULATORS</span>
+          <h3>Age Calculator</h3>
+          <p>Calculate your age from your birth date.</p>
+          <button class="tool-link" data-tool="age-calculator">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Percentage Calculator" data-category="Calculators">
+          <div class="tool-icon cyan">％</div>
+          <span class="tool-category">CALCULATORS</span>
+          <h3>Percentage Calculator</h3>
+          <p>Calculate percentages quickly.</p>
+          <button class="tool-link" data-tool="percentage">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="BMI Calculator" data-category="Calculators">
+          <div class="tool-icon pink">⚖️</div>
+          <span class="tool-category">CALCULATORS</span>
+          <h3>BMI Calculator</h3>
+          <p>Calculate your body mass index.</p>
+          <button class="tool-link" data-tool="bmi">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Scientific Calculator" data-category="Calculators">
+          <div class="tool-icon blue">🧮</div>
+          <span class="tool-category">CALCULATORS</span>
+          <h3>Scientific Calculator</h3>
+          <p>Perform advanced mathematical calculations.</p>
+          <button class="tool-link" data-tool="scientific-calculator">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Image Resizer" data-category="Image">
+          <div class="tool-icon purple">📐</div>
+          <span class="tool-category">IMAGE</span>
+          <h3>Image Resizer</h3>
+          <p>Resize images to your preferred dimensions.</p>
+          <button class="tool-link" data-tool="image-resizer">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Image Compressor" data-category="Image">
+          <div class="tool-icon cyan">🖼️</div>
+          <span class="tool-category">IMAGE</span>
+          <h3>Image Compressor</h3>
+          <p>Reduce image file sizes.</p>
+          <button class="tool-link" data-tool="image-compressor">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Temperature Converter" data-category="Converters">
+          <div class="tool-icon pink">🌡️</div>
+          <span class="tool-category">CONVERTERS</span>
+          <h3>Temperature Converter</h3>
+          <p>Convert Celsius, Fahrenheit and Kelvin.</p>
+          <button class="tool-link" data-tool="temperature">Open Tool ↗</button>
+        </article>
+
+        <article class="tool-card" data-name="Length Converter" data-category="Converters">
+          <div class="tool-icon blue">📏</div>
+          <span class="tool-category">CONVERTERS</span>
+          <h3>Length Converter</h3>
+          <p>Convert metres, kilometres, feet and inches.</p>
+          <button class="tool-link" data-tool="length">Open Tool ↗</button>
+        </article>
+
+      </div>
+
+      <div class="no-results" id="noResults" hidden>
+        <span>🔍</span>
+        <h3>No tools found</h3>
+        <p>Try another search or category.</p>
+      </div>
+    </section>
+
+    <section class="cta section">
+      <h2>Ready to explore the universe?</h2>
+      <p>Simple tools. Powerful results. Completely free to explore.</p>
+      <a href="#tools" class="cta-btn">Explore All Tools →</a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">✦ TOOL<span>VERSE</span></a>
+    <p>Made with passion for the digital world.</p>
+    <p class="copyright">© 2026 TOOLVERSE. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
